@@ -72,6 +72,7 @@ The objective of this assignment is to:
   * The running program window
   * VS Code terminal
 * Screenshot of running programme
+<img src="output.png">
 
 ---
 ## ⏰ Submission Deadline
