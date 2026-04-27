@@ -1,20 +1,57 @@
+# Name: Sadia Akter Liza
+# Id: 0432320005101110
+# OpenGL Dual-Shader Star Project
 
-# Setup
+This project is a C++ application using **OpenGL 3.3** that renders a "Star" shape (two overlapping triangles). It demonstrates the management of multiple **Vertex Array Objects (VAOs)** and switching between different **Shader Programs** during a single render cycle.
 
-## 1.  Windows ##
+---
 
-   * ### Download glfw libray from https://www.glfw.org/download.html. Download *64-bit Windows binaries* from *Windows pre-compiled binaries*. ###  
-   * ### Create **build** and **lib** folder in Code Repo. Put *glfw3.dll* from *lib-mingw-w64* folder of glfw library to **build** and **lib** folder.  ###
-   * ### For C++ compiler and make, Download MSYS2 Package Manager from https://www.msys2.org/ . ###  
-   * ### Run following commands in MSYS2 terminal: ```pacman -S base-devel``` and ```pacman -S gcc``` . ### 
-   * ### add your bin folder (which includes g++.exe and make.exe) PATH (C:\msys64\usr\bin) of msys64 installation directory in your environment variable.
-   * ### Run ```make win``` in Terminal. ###
-   * ### ```.exe``` file will be in **build** folder. ###
-   * ### if your code does not run, then you have to check openGL version by installing GLview from http://www.realtech-vr.com/home/glview . If your openGL version is below 3.3, then update windows. ### 
-​
-## 2. Linux ##
+## 🛠️ Tech Stack
+* **Language:** C++
+* **Graphics API:** OpenGL 3.3 (Core Profile)
+* **Window Management:** GLFW
+* **Function Loading:** GLAD
 
-   * ### Run following command in Terminal:  ```sudo apt-get install libglfw3-dev``` ###  
-   * ### Create **build** and **lib** folder in Code Repo. ###
-   * ### Run ```make linux``` in terminal. ###
-   * ### executable file will be in **build** folder. ###
+---
+
+## 🎨 Key Features
+* **Dual VAO/VBO Setup:** Each triangle has its own vertex data and buffer management.
+* **Multiple Shader Programs:** The code links two separate shader programs (`shaderProgramBlue` and `shaderProgramGreen`) to demonstrate shader switching.
+* **Custom Background:** Uses a bright **Yellow** clear color (`1.0, 1.0, 0.0`) for the background.
+* **Responsive Viewport:** Includes a callback function to adjust the rendering area when the window is resized.
+
+---
+
+## 📂 File Structure
+- `main.cpp`: Contains the shader source code, vertex data, and the main render loop.
+- `glad.c / glad.h`: OpenGL function loader.
+- `glfw3.h`: Library for window and input handling.
+
+---
+
+## 🚀 Build & Run
+1. **Setup:** Ensure you have the GLFW and GLAD libraries linked in your development environment.
+2. **Compile (GCC Example):**
+   ```bash
+   g++ main.cpp glad.c -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl -o StarProject
+---
+
+## ⌨️ Controls
+
+| Action | Key |
+| :--- | :--- |
+| **Close Window** | Press **L** |
+| **Resize** | Drag window edges to scale the viewport |
+
+---
+
+## 💡 Important Note
+
+Currently, both `fragmentShader1Source` and `fragmentShader2Source` are set to output the same **Cyan** color: `vec4(0.0f, 1.0f, 1.0f, 1.0f)`.
+
+To see the "Blue" and "Green" difference as intended by the variable names in the code, you can manually modify the `FragColor` values in the source strings:
+
+* **For Blue:** Change `fragmentShader1Source` to `vec4(0.0f, 0.0f, 1.0f, 1.0f);`
+* **For Green:** Change `fragmentShader2Source` to `vec4(0.0f, 1.0f, 0.0f, 1.0f);`
+
+---
