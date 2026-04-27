@@ -1,3 +1,5 @@
+# Name: Sadia Akter Liza
+# ID: 0432320005101110
 # Dynamic Uniform Triangle (OpenGL 3.3)
 
 A simple C++ and OpenGL application demonstrating how to use **Uniforms** to pass dynamic data from the CPU to the GPU.
